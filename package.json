@@ -1,0 +1,110 @@
+{
+  "name": "react-test2",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magicien/ReactTest2.git"
+  },
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/magicien/ReactTest2/issues"
+  },
+  "homepage": "https://github.com/magicien/ReactTest2#readme",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress",
+    "start": "cross-env NODE_ENV=development node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "latest",
+        {
+          "es2015": {
+            "modules": false
+          }
+        }
+      ],
+      "react",
+      "stage-0"
+    ],
+    "env": {
+      "production": {
+        "only": [
+          "app"
+        ],
+        "plugins": [
+          "transform-react-remove-prop-types",
+          "transform-react-constant-elements",
+          "transform-react-inline-elements"
+        ]
+      },
+      "test": {
+        "plugins": [
+          "transform-es2015-modules-commonjs",
+          "dynamic-import-node"
+        ]
+      }
+    }
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-dynamic-import-node": "^1.0.2",
+    "babel-plugin-react-intl": "^2.3.1",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-react-constant-elements": "^6.23.0",
+    "babel-plugin-transform-react-inline-elements": "^6.22.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.8",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "cheerio": "^1.0.0-rc.2",
+    "circular-dependency-plugin": "^4.2.0",
+    "eventsource-polyfill": "^0.9.6",
+    "exports-loader": "^0.6.4",
+    "file-loader": "^0.11.2",
+    "history": "^3.3.0",
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "ngrok": "^2.2.21",
+    "offline-plugin": "^4.8.3",
+    "react-router-dom": "^4.2.2",
+    "webpack": "^3.5.5",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.18.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "chalk": "^2.1.0",
+    "compression": "^1.7.0",
+    "cross-env": "^5.0.5",
+    "express": "^4.15.4",
+    "immutable": "^3.8.1",
+    "intl": "^1.2.5",
+    "invariant": "^2.2.2",
+    "ip": "^1.1.5",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.2",
+    "react-dom": "^15.6.1",
+    "react-helmet": "^5.2.0",
+    "react-intl": "^2.3.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-redux": "^4.0.8",
+    "react-router-scroll": "^0.4.2",
+    "redux": "^3.7.2",
+    "redux-immutable": "^4.0.0",
+    "redux-saga": "^0.15.6",
+    "reselect": "^3.0.1",
+    "styled-components": "^2.1.2"
+  }
+}
