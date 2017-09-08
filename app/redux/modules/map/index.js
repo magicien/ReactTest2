@@ -37,6 +37,10 @@ export const makeSelectMapId = () => createSelector(
   selectMap,
   (state) => state.get('id')
 )
+export const makeSelectMapData = () => createSelector(
+  selectMap,
+  (state) => { return {id: state.get('id'), name: state.get('name')} }
+)
 
 // Initial State
 const initialState = fromJS({

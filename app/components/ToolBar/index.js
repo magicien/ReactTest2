@@ -9,10 +9,12 @@ const Wrapper = styled.div`
 class ToolBar extends React.Component {
   render() {
     return (
-      <div className="col-sm-12">
-        <Wrapper>
-          ToolBar
-        </Wrapper>
+      <div className="row">
+        <div className="col-sm-12">
+          <Wrapper>
+            ToolBar
+          </Wrapper>
+        </div>
       </div>
     )
   }

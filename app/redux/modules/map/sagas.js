@@ -1,5 +1,6 @@
 import { take, call, put, cancel, takeLatest } from 'redux-saga/effects'
 import { LOCATION_CHANGE } from 'react-router-redux'
+import { fromJS } from 'immutable'
 
 import request from 'utils/request'
 import { mapsLoaded, LOAD_MAPS } from './index'
@@ -15,8 +16,9 @@ export function* getMaps() {
       const map = Object.assign({id: id}, mapJson[id])
       maps.push(map)
     }
+    const immutableMaps = fromJS(maps)
     
-    yield put(mapsLoaded(maps))
+    yield put(mapsLoaded(immutableMaps))
   }catch(err){
     console.error(err)
     //yield put(mapsLoadingError(err))
