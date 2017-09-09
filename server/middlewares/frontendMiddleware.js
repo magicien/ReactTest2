@@ -30,6 +30,16 @@ const addDevMiddlewares = (app, webpackConfig) => {
       }
     })
   })
+  app.get('/models.json', (req, res) => {
+    fs.readFile(path.join(compiler.outputPath, 'models.json'), (err, file) => {
+      if(err){
+        res.sendStatus(404)
+      }else{
+        res.send(file.toString())
+      }
+    })
+  })
+
 
   app.get('*', (req, res) => {
     mfs.readFile(path.join(compiler.outputPath, 'index.html'), (err, file) => {
