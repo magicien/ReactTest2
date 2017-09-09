@@ -6,7 +6,7 @@ import request from 'utils/request'
 import { modelsLoaded, LOAD_MODELS } from './index'
 
 export function* getModels() {
-  const url = 'models.json'
+  const url = 'https://cdn.rawgit.com/magicien/ReactTest2/master/data/models.json'
 
   try{
     const modelJson = yield call(request, url)

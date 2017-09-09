@@ -6,7 +6,7 @@ import request from 'utils/request'
 import { mapsLoaded, LOAD_MAPS } from './index'
 
 export function* getMaps() {
-  const url = 'maps.json'
+  const url = 'https://cdn.rawgit.com/magicien/ReactTest2/master/data/maps.json'
 
   try{
     const mapJson = yield call(request, url)
