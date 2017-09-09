@@ -16,7 +16,9 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress",
     "start": "cross-env NODE_ENV=development node server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:prod": "cross-env NODE_ENV=production node server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm run build"
   },
   "babel": {
     "presets": [
